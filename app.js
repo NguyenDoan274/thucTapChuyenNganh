@@ -1,22 +1,26 @@
 var createError = require('http-errors');
 var express = require('express');
+const { engine } =require ('express-handlebars');
+var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+app.engine(
+    'hbs',
+    engine({
+        extname: 'hbs',
+        defaultLayouts: 'layouts',
+        partialsDir: path.join(__dirname, 'views', 'partials'),
+        layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    })
+);
+
 var indexRouter = require('./routes/index');
-var shopRouter = require('./routes/shop');
-var aboutRouter = require('./routes/about');
-var blogRouter = require('./routes/blog');
-var cartRouter = require('./routes/cart');
-var checkoutRouter = require('./routes/checkout');
-var contactRouter = require('./routes/contact');
-var single_postRouter = require('./routes/single-post');
-var single_productRouter = require('./routes/single-product');
+var adminRouter = require('./routes/admin');
 var usersRouter = require('./routes/users');
 
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,14 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/shop', shopRouter);
-app.use('/about', aboutRouter);
-app.use('/blog', blogRouter);
-app.use('/cart', cartRouter);
-app.use('/checkout', checkoutRouter);
-app.use('/contact', contactRouter);
-app.use('/single-post',single_postRouter);
-app.use('/single-product',single_productRouter);
+app.use('/admin', adminRouter);
 app.use('/users', usersRouter);
 
 

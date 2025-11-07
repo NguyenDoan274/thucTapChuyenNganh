@@ -1,40 +1,47 @@
 var express = require('express');
 var router = express.Router();
+router.all('/*', function(
+    req,
+    res,
+    next) {
+    res.app.locals.layout = 'home';
+    next();
+})
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('home/index', { title: 'Express' });
 });
 
 router.get('/shop', function(req, res, next) {
-    res.render('shop');
+    res.render('home/shop');
 });
 
 router.get('/about', function(req, res, next) {
-    res.render('about');
+    res.render('home/about');
 });
 
 router.get('/blog', function(req, res, next) {
-    res.render('blog');
+    res.render('home/blog');
 });
 
 router.get('/cart', function(req, res, next) {
-    res.render('cart');
+    res.render('home/cart');
 });
 
 router.get('/checkout', function(req, res, next) {
-    res.render('checkout');
+    res.render('home/checkout');
 });
 
 router.get('/contact', function(req, res, next) {
-    res.render('contact');
+    res.render('home/contact');
 });
 
 router.get('/single-post', function(req, res, next) {
-    res.render('single-post');
+    res.render('home/single-post');
 });
 
 router.get('/single-product', function(req, res, next) {
-    res.render('single-product');
+    res.render('home/single-product');
 });
 module.exports = router;
