@@ -44,4 +44,8 @@ router.get('/single-post', function(req, res, next) {
 router.get('/single-product', function(req, res, next) {
     res.render('home/single-product');
 });
+
+router.get('/customer', function(req, res, next) {
+    res.render('home/customer');
+});
 module.exports = router;

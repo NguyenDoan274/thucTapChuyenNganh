@@ -52,4 +52,9 @@ router.get('/register', function(req, res, next) {
 router.get('/tables', function(req, res, next) {
     res.render('admin/tables', {title: 'tables'}) ;
 });
+
+
+router.get('/test', function(req, res, next) {
+    res.render('admin/test', {title: 'test'}) ;
+});
 module.exports = router;
