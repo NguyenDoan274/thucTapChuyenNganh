@@ -5,6 +5,9 @@ var app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const bcryptjs = require('bcryptjs');
 
 app.engine(
     'hbs',
@@ -15,6 +18,16 @@ app.engine(
         layoutsDir: path.join(__dirname, 'views', 'layouts'),
     })
 );
+
+mongoose.connect('mongodb://localhost:27017/node')
+    .then(() => {
+        console.log("MongoDB Connected successfully.");
+    })
+    .catch((err) => {
+        console.error("Error connecting to MongoDB", err);
+    })
+
+
 
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
@@ -31,16 +44,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter); 
 app.use('/users', usersRouter);
-
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -51,6 +60,13 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    next(createError(404));
 });
 
 module.exports = app;

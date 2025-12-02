@@ -322,7 +322,7 @@
                                                         </div>
                                                     </nav>
                                                     <div class="tab-content" id="nav-tabContent">
-                                                        <div class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
+                                                        <form action="/login" method="post" class="tab-pane fade active show" id="nav-sign-in" role="tabpanel"
                                                              aria-labelledby="nav-sign-in-tab">
                                                             <div class="form-group py-3">
                                                                 <label class="mb-2" for="sign-in">Username or email address *</label>
@@ -339,9 +339,9 @@
                                                                 <span class="label-body">Remember me</span>
                                                                 <span class="label-body"><a href="#" class="fw-bold">Forgot Password</a></span>
                                                             </label>
-                                                            <button type="submit" name="submit" class="btn btn-dark w-100 my-3">Login</button>
-                                                        </div>
-                                                        <div class="tab-pane fade" id="nav-register" role="tabpanel"
+                                                            <button type="submit"  class="btn btn-dark w-100 my-3">Login</button>
+                                                        </form>
+                                                        <form action="/register" method="post" class="tab-pane fade" id="nav-register" role="tabpanel"
                                                              aria-labelledby="nav-register-tab">
                                                             <div class="form-group py-3">
                                                                 <label class="mb-2" for="register">Your email address *</label>
@@ -358,8 +358,8 @@
                                                                 <span class="label-body">I agree to the <a href="#" class="fw-bold">Privacy
                                         Policy</a></span>
                                                             </label>
-                                                            <button type="submit" name="submit" class="btn btn-dark w-100 my-3">Register</button>
-                                                        </div>
+                                                            <button type="submit"  class="btn btn-dark w-100 my-3">Register</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
