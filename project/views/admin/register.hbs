@@ -20,6 +20,18 @@
 <div class="container">
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Register an Account</div>
+        {{#if error_message}}
+            <div class="alert alert-danger">
+                {{error_message}}
+            </div>
+        {{/if}}
+        {{#if errors}}
+            {{#each errors}}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+            {{/each}}
+        {{/if}}
         <div class="card-body">
             <form action="/admin/register" method="post">
                 <div class="form-group">

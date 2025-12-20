@@ -1,14 +1,14 @@
-<section class="hero-section position-relative padding-large" style="background-image: url(images/banner-image-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px;">
+<section class="hero-section position-relative padding-large" style="background-image: url(/images/banner-image-bg-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 400px;">
     <div class="hero-content">
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <h1>Single-Product</h1>
+                    <h1>{{product.name}}</h1>
                     <div class="breadcrumbs">
                 <span class="item">
                   <a href="/">Home > </a>
                 </span>
-                        <span class="item text-decoration-underline">Single-Product</span>
+                        <span class="item text-decoration-underline">{{product.name}}</span>
                     </div>
                 </div>
             </div>
@@ -23,27 +23,21 @@
                 <div class="d-flex gap-3 product-preview">
                     <div class="swiper thumb-swiper w-50">
                         <div class="swiper-wrapper d-flex flex-wrap gap-3 align-content-start">
-                            <div class="swiper-slide bg-white">
-                                <img src="images/product-thumbnail-1.png" alt="product-thumb" class="img-fluid border rounded-3">
-                            </div>
-                            <div class="swiper-slide bg-white">
-                                <img src="images/product-thumbnail-2.png" alt="product-thumb" class="img-fluid border rounded-3">
-                            </div>
-                            <div class="swiper-slide bg-white">
-                                <img src="images/product-thumbnail-3.png" alt="product-thumb" class="img-fluid border rounded-3">
+                            <div     class="swiper-slide bg-white">
+                                <img src="{{product.image}}" alt="product-thumb" class="img-fluid border rounded-3">
                             </div>
                         </div>
                     </div>
                     <div class="swiper large-swiper border rounded-3 overflow-hidden">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide bg-white">
-                                <img src="images/product-large-1.png" alt="single-product" class="img-fluid">
+                                <img src="{{product.image}}" alt="single-product" class="img-fluid">
                             </div>
                             <div class="swiper-slide bg-white">
-                                <img src="images/product-large-2.png" alt="single-product" class="img-fluid">
+                                <img src="{{product.image}}" alt="single-product" class="img-fluid">
                             </div>
                             <div class="swiper-slide bg-white">
-                                <img src="images/product-large-3.png" alt="single-product" class="img-fluid">
+                                <img src="{{product.image}}" alt="single-product" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -52,10 +46,10 @@
             <div class="col-lg-6">
                 <div class="product-info ps-lg-5 pt-3 pt-lg-0">
                     <div class="element-header">
-                        <h1 class="product-title">The Emerald Crown</h1>
+                        <h1 class="product-title">{{product.name}}</h1>
                         <div class="product-price d-flex align-items-center mt-2">
-                            <span class="fs-2 fw-light text-primary me-2">$200</span>
-                            <del>$260</del>
+                            <span class="fs-2 fw-light text-primary me-2">{{product.price}}vnd</span>
+                            <del>{{product.price}}vnd</del>
                         </div>
                         <div class="rating text-warning d-flex align-items-center mb-2">
                             <svg class="star star-fill">
@@ -75,42 +69,12 @@
                             </svg>
                         </div>
                     </div>
-                    <p>Justo, cum feugiat imperdiet nulla molestie ac vulputate scelerisque amet. Bibendum adipiscing platea blandit sit sed quam semper rhoncus.</p>
+                    <p>{{product.description}}</p>
                     <hr>
                     <div class="cart-wrap">
-                        <div class="color-options product-select my-3">
-                            <div class="color-toggle" data-option-index="0">
-                                <h4 class="item-title text-decoration-underline text-capitalize">Color</h4>
-                                <ul class="select-list list-unstyled d-flex mb-0">
-                                    <li class="select-item me-3" data-val="Green" title="Green">
-                                        <a href="#">Gray</a>
-                                    </li>
-                                    <li class="select-item me-3" data-val="Orange" title="Orange">
-                                        <a href="#">Blue</a>
-                                    </li>
-                                    <li class="select-item me-3" data-val="Red" title="Red">
-                                        <a href="#">White</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="swatch product-select" data-option-index="1">
-                            <h4 class="item-title text-decoration-underline text-capitalize">Size</h4>
-                            <ul class="select-list list-unstyled d-flex mb-0">
-                                <li data-value="S" class="select-item me-3">
-                                    <a href="#">S</a>
-                                </li>
-                                <li data-value="M" class="select-item me-3">
-                                    <a href="#">M</a>
-                                </li>
-                                <li data-value="L" class="select-item me-3">
-                                    <a href="#">L</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="product-quantity my-3">
                             <div class="item-title">
-                                <l>2 in stock</l>
+                                <l>uknown in stock</l>
                             </div>
                             <div class="stock-button-wrap mt-2 d-flex flex-wrap align-items-center">
                                 <div class="product-quantity">
@@ -152,27 +116,16 @@
                             <span class="fw-medium me-2">Category:</span>
                             <ul class="select-list list-unstyled d-flex mb-0">
                                 <li data-value="S" class="select-item">
-                                    <a href="#">Romance</a>,
+                                    <a href="/category-books/{{product.category._id}}">{{product.category.name}}</a>,
                                 </li>
-                                <li data-value="S" class="select-item">
-                                    <a href="#">Sci-Fi</a>,
-                                </li>
-                                <li data-value="S" class="select-item">
-                                    <a href="#">Fiction</a>
-                                </li>
+
                             </ul>
                         </div>
                         <div class="meta-item d-flex mb-1">
                             <span class="fw-medium me-2">Tags:</span>
                             <ul class="select-list list-unstyled d-flex mb-0">
                                 <li data-value="S" class="select-item">
-                                    <a href="#">Revenge</a>,
-                                </li>
-                                <li data-value="S" class="select-item">
-                                    <a href="#">Vampire</a>,
-                                </li>
-                                <li data-value="S" class="select-item">
-                                    <a href="#">Life</a>
+                                    <a href="#">None</a>,
                                 </li>
                             </ul>
                         </div>
@@ -198,13 +151,7 @@
                 <div class="tab-content border-bottom py-4" id="nav-tabContent">
                     <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <p>Product Description</p>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.
-                        <ul class="fw-light">
-                            <li>Donec nec justo eget felis facilisis fermentum.</li>
-                            <li>Suspendisse urna viverra non, semper suscipit pede.</li>
-                            <li>Aliquam porttitor mauris sit amet orci.</li>
-                        </ul>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>
+                        <p>{{product.description}}</p>
                     </div>
                     <div class="tab-pane fade" id="nav-information" role="tabpanel" aria-labelledby="nav-information-tab">
                         <p>It is Comfortable and Best</p>
@@ -221,7 +168,7 @@
                         <div class="review-box review-style d-flex gap-3 flex-column">
                             <div class="review-item d-flex">
                                 <div class="image-holder me-2">
-                                    <img src="images/review-image1.jpg" alt="review" class="img-fluid rounded-3">
+                                    <img src="/images/review-image1.jpg" alt="review" class="img-fluid rounded-3">
                                 </div>
                                 <div class="review-content">
                                     <div class="rating text-primary">
@@ -250,7 +197,7 @@
                             </div>
                             <div class="review-item d-flex">
                                 <div class="image-holder me-2">
-                                    <img src="images/review-image2.jpg" alt="review" class="img-fluid rounded-3">
+                                    <img src="/images/review-image2.jpg" alt="review" class="img-fluid rounded-3">
                                 </div>
                                 <div class="review-content">
                                     <div class="rating text-primary">
@@ -346,275 +293,51 @@
         </div>
         <div class="swiper product-swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <div class="position-absolute">
-                            <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-                        </div>
-                        <img src="images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
+                {{#each products}}
+                    <div class="swiper-slide">
+                        <div class="card position-relative p-4 border rounded-3">
+                            <img src="{{image}}" class="img-fluid shadow-sm" alt="product item">
+                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product/{{_id}}">{{name}}</a></h6>
+                            <div class="review-content d-flex">
+                                <p class="my-2 me-2 fs-6 text-black-50">{{author}}</p>
 
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
+                                <div class="rating text-warning d-flex align-items-center">
+                                    <svg class="star star-fill">
+                                        <use xlink:href="#star-fill"></use>
+                                    </svg>
+                                    <svg class="star star-fill">
+                                        <use xlink:href="#star-fill"></use>
+                                    </svg>
+                                    <svg class="star star-fill">
+                                        <use xlink:href="#star-fill"></use>
+                                    </svg>
+                                    <svg class="star star-fill">
+                                        <use xlink:href="#star-fill"></use>
+                                    </svg>
+                                    <svg class="star star-fill">
+                                        <use xlink:href="#star-fill"></use>
+                                    </svg>
+                                </div>
                             </div>
-                        </div>
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
+                            <span class="price text-primary fw-bold mb-2 fs-5">{{price}}</span>
+                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
+                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-title="Tooltip on top">
+                                    <svg class="cart">
+                                        <use xlink:href="#cart"></use>
+                                    </svg>
+                                </button>
+                                <a href="#" class="btn btn-dark">
                     <span>
                       <svg class="wishlist">
                         <use xlink:href="#heart"></use>
                       </svg>
                     </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <img src="images/product-item2.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
+                                </a>
                             </div>
                         </div>
-
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
-                    <span>
-                      <svg class="wishlist">
-                        <use xlink:href="#heart"></use>
-                      </svg>
-                    </span>
-                            </a>
-                        </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <img src="images/product-item3.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
-                    <span>
-                      <svg class="wishlist">
-                        <use xlink:href="#heart"></use>
-                      </svg>
-                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <div class="position-absolute">
-                            <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-                        </div>
-                        <img src="images/product-item4.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
-                    <span>
-                      <svg class="wishlist">
-                        <use xlink:href="#heart"></use>
-                      </svg>
-                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <img src="images/product-item5.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
-                    <span>
-                      <svg class="wishlist">
-                        <use xlink:href="#heart"></use>
-                      </svg>
-                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative p-4 border rounded-3">
-                        <img src="images/product-item6.png" class="img-fluid shadow-sm" alt="product item">
-                        <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Secrets of the Alchemist</a></h6>
-                        <div class="review-content d-flex">
-                            <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                            <div class="rating text-warning d-flex align-items-center">
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                                <svg class="star star-fill">
-                                    <use xlink:href="#star-fill"></use>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                        <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                            <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                    data-bs-title="Tooltip on top">
-                                <svg class="cart">
-                                    <use xlink:href="#cart"></use>
-                                </svg>
-                            </button>
-                            <a href="#" class="btn btn-dark">
-                    <span>
-                      <svg class="wishlist">
-                        <use xlink:href="#heart"></use>
-                      </svg>
-                    </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
 
             </div>
         </div>
@@ -622,7 +345,7 @@
 </section>
 
 <section id="customers-reviews" class="position-relative padding-large"
-         style="background-image: url(images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px;">
+         style="background-image: url(/images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 600px;">
     <div class="container offset-md-3 col-md-6 ">
         <div class="position-absolute top-50 end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next testimonial-button-next">
             <svg class="chevron-forward-circle d-flex justify-content-center align-items-center p-2" width="80" height="80">
@@ -767,38 +490,38 @@
     <div class="container">
         <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
             <h3 class="d-flex align-items-center">Latest posts</h3>
-            <a href="/blog" class="btn">View All</a>
+            <a href="shop.html" class="btn">View All</a>
         </div>
         <div class="row">
             <div class="col-md-3 posts mb-4">
-                <img src="images/post-item1.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="/blog" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="/single-post">10 Must-Read Books of the Year: Our Top Picks!</a></h4>
+                <img src="/images/post-item1.jpg" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Books</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">10 Must-Read Books of the Year: Our Top Picks!</a></h4>
                 <p class="mb-2">Dive into the world of cutting-edge technology with our latest blog post, where we highlight
-                    five essential gadg <span><a class="text-decoration-underline text-black-50" href="/single-post">Read More</a></span>
+                    five essential gadg <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
                 </p>
             </div>
             <div class="col-md-3 posts mb-4">
-                <img src="images/post-item2.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="/blog" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="/single-post">The Fascinating Realm of Science Fiction</a></h4>
+                <img src="/images/post-item2.jpg" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Books</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">The Fascinating Realm of Science Fiction</a></h4>
                 <p class="mb-2">Explore the intersection of technology and sustainability in our latest blog post. Learn about
-                    the innovative <span><a class="text-decoration-underline text-black-50" href="/single-post">Read More</a></span> </p>
+                    the innovative <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span> </p>
             </div>
             <div class="col-md-3 posts mb-4">
-                <img src="images/post-item3.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="/blog" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="/single-post">Finding Love in the Pages of a Book</a></h4>
+                <img src="/images/post-item3.jpg" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Books</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Finding Love in the Pages of a Book</a></h4>
                 <p class="mb-2">Stay ahead of the curve with our insightful look into the rapidly evolving landscape of
-                    wearable technology. <span><a class="text-decoration-underline text-black-50" href="/single-post">Read More</a></span>
+                    wearable technology. <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
                 </p>
             </div>
             <div class="col-md-3 posts mb-4">
-                <img src="images/post-item4.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="/blog" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="/single-post">Reading for Mental Health: How Books Can Heal and Inspire</a></h4>
+                <img src="/images/post-item4.jpg" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Books</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="single-post.html">Reading for Mental Health: How Books Can Heal and Inspire</a></h4>
                 <p class="mb-2">In today's remote work environment, productivity is key. Discover the top apps and tools that
-                    can help you stay <span><a class="text-decoration-underline text-black-50" href="/single-post">Read More</a></span>
+                    can help you stay <span><a class="text-decoration-underline text-black-50" href="single-post.html">Read More</a></span>
                 </p>
             </div>
         </div>
@@ -819,7 +542,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item1.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item1.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>
@@ -831,7 +554,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item2.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item2.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>
@@ -843,7 +566,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item3.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item3.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>
@@ -855,7 +578,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item4.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item4.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>
@@ -867,7 +590,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item5.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item5.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>
@@ -879,7 +602,7 @@
                                 <use xlink:href="#instagram"></use>
                             </svg>
                         </div>
-                        <img src="images/insta-item6.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
+                        <img src="/images/insta-item6.jpg" alt="instagram" class="img-fluid rounded-3 insta-image">
                     </a>
                 </figure>
             </div>

@@ -38,552 +38,64 @@
                         </select>
                     </div>
                 </div>
-                <div class="row product-content product-store">
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <div class="position-absolute">
-                                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">10% off</p>
-                            </div>
-                            <img src="images/product-item1.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Blood on the Snow</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
+               <div class="container">
+                   <div class="row product-content product-store">
+                       {{#each products}}
+                           <div class="col-lg-3 col-md-4 mb-4">
+                           <a href="/single-product/{{_id}}">
 
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
 
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
+                                   <div class="card position-relative p-4 border rounded-3">
+
+                                       <img src="{{image}}" class="img-fluid shadow-sm" alt="product item">
+                                       <h6 class="mt-4 mb-0 fw-bold">{{name}}</h6>
+                                       <div class="review-content d-flex">
+                                           <p class="my-2 me-2 fs-6 text-black-50">{{author}}</p>
+
+                                           <div class="rating text-warning d-flex align-items-center">
+                                               <svg class="star star-fill">
+                                                   <use xlink:href="#star-fill"></use>
+                                               </svg>
+                                               <svg class="star star-fill">
+                                                   <use xlink:href="#star-fill"></use>
+                                               </svg>
+                                               <svg class="star star-fill">
+                                                   <use xlink:href="#star-fill"></use>
+                                               </svg>
+                                               <svg class="star star-fill">
+                                                   <use xlink:href="#star-fill"></use>
+                                               </svg>
+                                               <svg class="star star-fill">
+                                                   <use xlink:href="#star-fill"></use>
+                                               </svg>
+                                           </div>
+                                       </div>
+
+                                       <span class="price text-primary fw-bold mb-2 fs-5">{{price}}vnd</span>
+                                       <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
+                                           <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                   data-bs-title="Tooltip on top">
+                                               <svg class="cart">
+                                                   <use xlink:href="#cart"></use>
+                                               </svg>
+                                           </button>
+                                           <a href="#" class="btn btn-dark">
                       <span>
                         <svg class="wishlist">
                           <use xlink:href="#heart"></use>
                         </svg>
                       </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item2.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Story of Success</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
+                                           </a>
+                                       </div>
+                                   </div>
+                                  </a>
+                           </div>
 
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
+                       {{/each}}
 
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item3.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">City of the Dead</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
 
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <div class="position-absolute">
-                                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">12% off</p>
-                            </div>
-                            <img src="images/product-item4.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">The Dirty and Dead</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item5.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Life Flight</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item6.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Heartland Stars</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <div class="position-absolute">
-                                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">20% off</p>
-                            </div>
-                            <img src="images/product-item7.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">My Dearest Darkest</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item8.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">House of Sky Breath</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <div class="position-absolute">
-                                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">15% off</p>
-                            </div>
-                            <img src="images/product-item9.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">The Colors of Life</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item10.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">His Saving Grace</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <div class="position-absolute">
-                                <p class="bg-primary py-1 px-3 fs-6 text-white rounded-2">25% off</p>
-                            </div>
-                            <img src="images/product-item11.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Mask of Death</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 mb-4">
-                        <div class="card position-relative p-4 border rounded-3">
-                            <img src="images/product-item12.png" class="img-fluid shadow-sm" alt="product item">
-                            <h6 class="mt-4 mb-0 fw-bold"><a href="/single-product">Heavenly Bodies</a></h6>
-                            <div class="review-content d-flex">
-                                <p class="my-2 me-2 fs-6 text-black-50">Lauren Asher</p>
-
-                                <div class="rating text-warning d-flex align-items-center">
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                    <svg class="star star-fill">
-                                        <use xlink:href="#star-fill"></use>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
-                            <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
-                                <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-title="Tooltip on top">
-                                    <svg class="cart">
-                                        <use xlink:href="#cart"></use>
-                                    </svg>
-                                </button>
-                                <a href="#" class="btn btn-dark">
-                      <span>
-                        <svg class="wishlist">
-                          <use xlink:href="#heart"></use>
-                        </svg>
-                      </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                   </div>
+               </div>
                 <nav class="py-5" aria-label="Page navigation">
                     <ul class="pagination justify-content-center gap-4">
                         <li class="page-item disabled">
@@ -620,20 +132,13 @@
                         </div>
                         <ul class="product-categories mb-0 sidebar-list list-unstyled">
                             <li class="cat-item">
-                                <a href="/collections/categories">All</a>
+                                <a href="/shop">All</a>
                             </li>
-                            <li class="cat-item">
-                                <a href="#">Romance</a>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Recipie</a>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Sci-Fi</a>
-                            </li>
-                            <li class="cat-item">
-                                <a href="#">Lifestyle</a>
-                            </li>
+                            {{#each categories}}
+                                <li class="cat-item">
+                                    <a href="/category-books/{{_id}}">{{name}}</a>
+                                </li>
+                            {{/each}}
                         </ul>
                     </div>
                     <div class="widget-product-tags pt-5">
@@ -641,18 +146,7 @@
                             <h3 class="d-flex flex-column mb-0">Tags</h3>
                         </div>
                         <ul class="product-tags mb-0 sidebar-list list-unstyled">
-                            <li class="tags-item">
-                                <a href="#">Sci-Fi</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">Revenge</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">Zombie</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">Vampire</a>
-                            </li>
+
                         </ul>
                     </div>
                     <div class="widget-product-authur pt-5">
@@ -660,15 +154,11 @@
                             <h3 class="d-flex flex-column mb-0">authur</h3>
                         </div>
                         <ul class="product-tags mb-0 sidebar-list list-unstyled">
-                            <li class="tags-item">
-                                <a href="#">Hanna Clark</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">Albert E. Beth</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">D.K John</a>
-                            </li>
+                            {{#each products}}
+                                <li class="tags-item">
+                                    <a href="#">{{author}}</a>
+                                </li>
+                            {{/each}}
                         </ul>
                     </div>
                     <div class="widget-price-filter pt-5">
@@ -677,19 +167,6 @@
                         </div>
                         <ul class="product-tags mb-0 sidebar-list list-unstyled">
                             <li class="tags-item">
-                                <a href="#">Less than $10</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">$10- $20</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">$20- $30</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">$30- $40</a>
-                            </li>
-                            <li class="tags-item">
-                                <a href="#">$40- $50</a>
                             </li>
                         </ul>
                     </div>
