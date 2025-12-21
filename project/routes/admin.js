@@ -137,7 +137,7 @@
         });
 
     })
-    router.all('/*', (req, res, next) => {
+    router.all('/*',useAuthenticated ,(req, res, next) => {
         res.app.locals.layout = 'admin'; // Set layout for admin pages
         next();
     });
