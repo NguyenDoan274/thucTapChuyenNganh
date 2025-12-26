@@ -16,9 +16,12 @@ router.all('/*', function(
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    Category.find({}).then((dbCategory) => {
+        categories = dbCategory.map(cat=>cat.toObject());
     Product.find({}).then((dbProduct) => {
-        products = dbProduct.map(pro=>pro.toObject());
-        res.render('home/index', { title: 'home', products: products});
+        products = dbProduct.map(pro => pro.toObject());
+        res.render('home/index', {title: 'home', products: products, categories: categories});
+        });
     });
 });
 
@@ -85,9 +88,6 @@ router.get('/category-books/:id', function(req, res, next) {
     });
 });
 
-router.get('/customer', function(req, res, next) {
-    res.render('home/customer');
-});
 
 router.get('/login', function(req, res, next) {
     res.render('home/login', { title: 'login'});

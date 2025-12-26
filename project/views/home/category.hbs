@@ -17,22 +17,29 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="row">
+<section id="categories" class="padding-large pt-0">
+    <div class="container">
         <br>
-        {{#each categories}}
-            <div class="col-md-3 mb-4">
-                <!--    <a href="/single-product/" >-->
-                <a href="/category-books/{{_id}}">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <img src="{{image}}" class="card-img-top" alt="{{name}}">
+        <div class="row">
+            {{#each categories}}
+                <div class="col-md-4">
+                    <div class="card mb-4 border-0 rounded-3 position-relative overflow-hidden">
+                        <a href="/category-books/{{_id}}">
 
-                            <h5 class="card-title text-center"> {{name}}</h5>
-                        </div>
+                            <div class="ratio ratio-16x9">
+                                <img src="{{image}}"
+                                     class="img-fluid rounded-3 w-100 h-100 object-fit-cover"
+                                     alt="{{name}}">
+                            </div>
+
+                            <h6 class="position-absolute bottom-0 bg-primary m-3 py-1 px-3 rounded-3">
+                                <span class="text-white">{{name}}</span>
+                            </h6>
+
+                        </a>
                     </div>
-                </a>
-            </div>
-        {{/each}}
+                </div>
+            {{/each}}
+        </div>
     </div>
-</div>
+</section>
