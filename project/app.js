@@ -42,6 +42,7 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var categoryRouter = require('./routes/category');
 var productRouter = require('./routes/product');
+var contactRouter = require('./routes/contact');
 var usersRouter = require('./routes/users');
 
 
@@ -108,6 +109,7 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/admin/category', categoryRouter);
 app.use('/admin/product', productRouter);
+app.use('/admin/contact', contactRouter);
 app.use('/users', usersRouter);
 
 // error handler

@@ -4,13 +4,20 @@ const bcryptjs = require("bcryptjs");
 const passport = require('passport');
 const Category = require("../models/Category");
 const Product = require("../models/Product");
+const Contact = require("../models/Contact");
 const LocalStrategy = require('passport-local').Strategy;
 var router = express.Router();
-router.all('/*', function(
+router.all('/*',async function(
     req,
     res,
     next) {
     res.app.locals.layout = 'home';
+    try {
+        const contact = await Contact.findOne({}).lean();
+        res.locals.footerContact = contact;
+    } catch (err) {
+        res.locals.footerContact = null;
+    }
     next();
 })
 
@@ -39,9 +46,6 @@ router.get('/about', function(req, res, next) {
     res.render('home/about');
 });
 
-router.get('/blog', function(req, res, next) {
-    res.render('home/blog');
-});
 
 router.get('/cart', function(req, res, next) {
     res.render('home/cart');
@@ -52,11 +56,10 @@ router.get('/checkout', function(req, res, next) {
 });
 
 router.get('/contact', function(req, res, next) {
-    res.render('home/contact');
-});
-
-router.get('/single-post', function(req, res, next) {
-    res.render('home/single-post');
+    Contact.find({}).then((dbContact) => {
+        contacts = dbContact.map(cat=>cat.toObject());
+        res.render('home/contact', {contacts: contacts});
+    });
 });
 
 router.get('/category', function(req, res, next) {
